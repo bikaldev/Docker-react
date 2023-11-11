@@ -6,7 +6,7 @@ jobs:
     steps: 
       - checkout
       - run: docker build -f Dockerfile.dev -t kalibdev/docker-react .
-      - run: docker run kalibdev/docker-react npm run test -- --coverage
+      - run: docker run kalibdev/docker-react npm run test --CI=true
 
 
     
