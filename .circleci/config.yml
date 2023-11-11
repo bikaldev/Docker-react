@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  build_and_test:
+    machine:
+      image: ubuntu-2004:current
+      docker_layer_caching: true
+    steps: 
+      - checkout
+      -run: 
+        docker build -f Dockerfile.dev -t kalibdev/Docker-react .
+      -run: 
+        docker run kalibdev/Docker-react npm run test -- --coverage
+
+
+    
